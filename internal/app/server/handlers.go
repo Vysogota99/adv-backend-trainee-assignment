@@ -38,7 +38,7 @@ func (r *Router) SaveStatHandler(c *gin.Context) {
 	}
 
 	if err := r.store.Stat().Save(&stat); err != nil {
-		respond(c, http.StatusInternalServerError, "", err.Error())
+		respond(c, http.StatusInternalServerError, "", "Ошибка, статистика за эту дату уже записана")
 		return
 	}
 
